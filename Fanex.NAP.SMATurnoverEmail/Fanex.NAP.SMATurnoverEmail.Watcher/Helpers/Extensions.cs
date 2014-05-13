@@ -43,7 +43,7 @@ namespace Fanex.NAP.SMATurnoverEmail.Watcher.Helpers
         /// <returns>The formatted value.</returns>
         public static string FormatShortDate(this DateTime value)
         {
-            return string.Format("mm/dd/yyyy", value);
+            return value.ToString("MM/dd/yyyy");
         }
     }
 }

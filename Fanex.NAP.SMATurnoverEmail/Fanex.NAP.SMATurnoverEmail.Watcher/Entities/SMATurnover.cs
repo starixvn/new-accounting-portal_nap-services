@@ -16,9 +16,11 @@ namespace Fanex.NAP.SMATurnoverEmail.Watcher.Entities
     /// </summary>
     public class SMATurnover
     {
-        public int SportID { get; set; }
+        public int SportType { get; set; }
 
         public int LeagueID { get; set; }
+
+        public int MatchID { get; set; }
 
         public string MatchCode { get; set; }
 
@@ -26,7 +28,9 @@ namespace Fanex.NAP.SMATurnoverEmail.Watcher.Entities
 
         public int AwayID { get; set; }
 
-        public DateTime EventDate { get; set; }
+        public DateTime? EventDate { get; set; }
+
+        public int CustID { get; set; }
 
         public string Username { get; set; }
 
@@ -34,9 +38,9 @@ namespace Fanex.NAP.SMATurnoverEmail.Watcher.Entities
 
         public string Currency { get; set; }
 
-        public decimal MaxTOAmount { get; set; }
+        public decimal? MaxTurnover { get; set; }
 
-        public decimal MemberTO { get; set; }
+        public decimal? TotalTurnover { get; set; }
 
         public int PercentageUsed { get; set; }
     }

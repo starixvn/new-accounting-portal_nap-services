@@ -13,7 +13,9 @@ namespace Fanex.NAP.SMATurnoverEmail.Service
     using System.Data.SqlClient;
     using System.ServiceProcess;
     using System.Timers;
+    using Fanex.Data.Configuration;
     using Fanex.Logging;
+    using Fanex.NAP.SMATurnoverEmail.Watcher.Configurations;
     using Fanex.NAP.SMATurnoverEmail.Watcher.Services;
 
     /// <summary>
@@ -29,6 +31,28 @@ namespace Fanex.NAP.SMATurnoverEmail.Service
         public EmailNotification()
         {
             InitializeComponent();
+            DbSettingProviderManager.Current.Start();
+        }
+
+        /// <summary>
+        /// Starts the service.
+        /// </summary>
+        public void Start()
+        {
+            this._turnoverService = new SMATurnoverService();
+            this._timer = new Timer();
+            this._timer.Interval = AppSettings.Interval;
+            this._timer.Elapsed += new ElapsedEventHandler(this.CallService);
+            this._timer.Enabled = true;
+        }
+
+        /// <summary>
+        /// Stops the service.
+        /// </summary>
+        public new void Stop()
+        {
+            base.Stop();
+            this._timer.Enabled = false;
         }
 
         /// <summary>
@@ -38,13 +62,7 @@ namespace Fanex.NAP.SMATurnoverEmail.Service
         /// <param name="args">Data passed by the start command.</param>
         protected override void OnStart(string[] args)
         {
-            this._turnoverService = new SMATurnoverService();
-            this._timer = new Timer();
-            this._timer.Interval = 10000;
-            this._timer.Elapsed += new ElapsedEventHandler(this.CallService);
-            this._timer.Enabled = true;
-
-            Test.WriteTest("Test window service started.");
+            this.Start();
         }
 
         /// <summary>
@@ -53,8 +71,7 @@ namespace Fanex.NAP.SMATurnoverEmail.Service
         /// </summary>
         protected override void OnStop()
         {
-            this._timer.Enabled = false;
-            Test.WriteTest("Test window service stopped.");
+            this.Stop();
         }
 
         /// <summary>

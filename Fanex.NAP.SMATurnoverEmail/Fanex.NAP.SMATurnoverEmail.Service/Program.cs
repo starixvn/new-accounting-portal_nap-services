@@ -10,6 +10,7 @@
 namespace Fanex.NAP.SMATurnoverEmail.Service
 {
     using System.ServiceProcess;
+    using System.Threading;
 
     /// <summary>
     /// Service starting point.
@@ -21,12 +22,19 @@ namespace Fanex.NAP.SMATurnoverEmail.Service
         /// </summary>
         private static void Main()
         {
+#if DEBUG
+            var service = new EmailNotification();
+
+            service.Start();
+            Thread.Sleep(600000);
+#else
             var servicesToRun = new ServiceBase[]
             {
                 new EmailNotification()
             };
 
             ServiceBase.Run(servicesToRun);
+#endif
         }
     }
 }

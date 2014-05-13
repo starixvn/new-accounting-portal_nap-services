@@ -17,6 +17,7 @@ namespace Fanex.NAP.SMATurnoverEmail.Watcher.Services
     using Fanex.MailDeliver.Model;
     using Fanex.NAP.SMATurnoverEmail.Watcher.Configurations;
     using Fanex.NAP.SMATurnoverEmail.Watcher.Entities;
+    using Fanex.NAP.SMATurnoverEmail.Watcher.Repositories;
     using RazorEngine;
 
     /// <summary>
@@ -24,6 +25,18 @@ namespace Fanex.NAP.SMATurnoverEmail.Watcher.Services
     /// </summary>
     public class SMATurnoverService : ISMATurnoverService
     {
+        private ISMATurnoverRepository _repository = null;
+
+        public SMATurnoverService() :
+            this(null)
+        {
+        }
+
+        public SMATurnoverService(ISMATurnoverRepository repository)
+        {
+            this._repository = repository ?? new SMATurnoverRepository();
+        }
+
         /// <summary>
         /// Notifies the email.
         /// </summary>
@@ -33,25 +46,34 @@ namespace Fanex.NAP.SMATurnoverEmail.Watcher.Services
         {
             var isNotified = true;
             var timezone = TimeZone.CurrentTimeZone.GetUtcOffset(DateTime.Now).Hours;
-            var subject = string.Format(AppSettings.Subject, DateTime.Now, string.Format("{0}{1}", timezone > 0 ? "+" : string.Empty), timezone);
+            var subject = string.Format(AppSettings.Subject, DateTime.Now, string.Format("{0}{1}", timezone > 0 ? "+" : string.Empty, timezone));
             var recipients = GetRecipients();
             IEnumerable<FormattedSMATurnover> turnovers = GetReachedSMATurnover();
 
-            if (turnovers != null && turnovers.Any())
+            if (recipients != null && turnovers != null && turnovers.Any())
             {
                 string appLocation = AppDomain.CurrentDomain.BaseDirectory;
                 var template = File.ReadAllText(appLocation + templateUrl);
                 var content = Razor.Parse(template, turnovers);
+                var updatingList = new UpdatingNotifiedSMATurnover(turnovers);
 
                 SendMail(new EmailContent
                     {
                         Recievers = recipients,
-                        Title = "IT Team",
+                        Title = AppSettings.Title,
                         Subject = subject,
                         Body = content
                     });
 
-                // @@TODO: Update status.
+                if (updatingList.IsValid())
+                {
+                    this._repository.UpdateNotifiedStatus(updatingList);
+
+                    if (updatingList.ErrCode != 0)
+                    {
+                        throw new Exception(updatingList.ErrMsg);
+                    }
+                }
             }
 
             return isNotified;
@@ -63,14 +85,9 @@ namespace Fanex.NAP.SMATurnoverEmail.Watcher.Services
         /// <returns>Recipients object.</returns>
         private Recipients GetRecipients()
         {
-            Recipients recipients = null;
+            Recipients recipients = this._repository.GetReceivers(AppSettings.FunctionID);
 
-            recipients = new Recipients
-            {
-                To = "jason.ly@nexcel.vn",
-                Cc = "jason.ly@nexcel.vn",
-                Bcc = "jason.ly@nexcel.vn"
-            };
+            recipients = recipients.IsAvailabe != 0 ? recipients : null;
 
             return recipients;
         }
@@ -81,24 +98,13 @@ namespace Fanex.NAP.SMATurnoverEmail.Watcher.Services
         /// <returns>List of FormattedSMATurnover objects.</returns>
         private IEnumerable<FormattedSMATurnover> GetReachedSMATurnover()
         {
-            List<FormattedSMATurnover> result = null;
+            IEnumerable<SMATurnover> rawData = this._repository.GetNotifiedSMATurnover();
+            IEnumerable<FormattedSMATurnover> result = null;
 
-            result = new List<FormattedSMATurnover>();
-            result.Add(new FormattedSMATurnover(new SMATurnover
-                {
-                    SportID = 1,
-                    LeagueID = 3,
-                    HomeID = 1,
-                    AwayID = 2,
-                    MatchCode = "Test",
-                    EventDate = DateTime.Now,
-                    RoldeID = 4,
-                    Username = "Test",
-                    Currency = "UUS",
-                    MaxTOAmount = 1000000,
-                    MemberTO = 100000,
-                    PercentageUsed = 10
-                }));
+            if (rawData != null && rawData.Any())
+            {
+                result = rawData.Select(obj => new FormattedSMATurnover(obj));
+            }
 
             return result;
         }
@@ -113,9 +119,9 @@ namespace Fanex.NAP.SMATurnoverEmail.Watcher.Services
             {
                 var mailItem = new MailRecord
                 {
-                    MailTo = content.Recievers.To,
-                    MailCc = content.Recievers.Cc,
-                    MailBcc = content.Recievers.Bcc,
+                    MailTo = content.Recievers.ToList,
+                    MailCc = content.Recievers.CcList,
+                    MailBcc = content.Recievers.BccList,
                     Title = content.Title,
                     Subject = content.Subject,
                     Body = content.Body

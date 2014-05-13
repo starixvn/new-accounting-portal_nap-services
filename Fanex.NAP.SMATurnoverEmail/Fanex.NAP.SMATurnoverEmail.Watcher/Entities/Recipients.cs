@@ -14,10 +14,16 @@ namespace Fanex.NAP.SMATurnoverEmail.Watcher.Entities
     /// </summary>
     public class Recipients
     {
-        public string To { get; set; }
+        public int SiteID { get; set; }
 
-        public string Cc { get; set; }
+        public string Site { get; set; }
 
-        public string Bcc { get; set; }
+        public string ToList { get; set; }
+
+        public string CcList { get; set; }
+
+        public string BccList { get; set; }
+
+        public int IsAvailabe { get; set; }
     }
 }

@@ -61,6 +61,7 @@ namespace Fanex.NAP.SMATurnoverEmail.Service
             this._serviceInstaller.Description = "NAP CM - SMA Turnover Email Notification Service";
             this._serviceInstaller.DisplayName = "SMA Turnover Email Notification";
             this._serviceInstaller.ServiceName = "SMA Turnover Email Notification";
+            this._serviceInstaller.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
             // 
             // ProjectInstaller
             // 

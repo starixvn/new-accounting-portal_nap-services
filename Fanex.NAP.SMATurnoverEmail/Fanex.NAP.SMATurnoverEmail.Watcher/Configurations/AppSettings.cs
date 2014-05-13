@@ -18,6 +18,7 @@ namespace Fanex.NAP.SMATurnoverEmail.Watcher.Configurations
     public static class AppSettings
     {
         private static int interval;
+        private static string title;
         private static string subject;
         private static int functionID;
 
@@ -31,6 +32,19 @@ namespace Fanex.NAP.SMATurnoverEmail.Watcher.Configurations
                 }
 
                 return interval;
+            }
+        }
+
+        public static string Title
+        {
+            get
+            {
+                if (title == null)
+                {
+                    title = GetValue("Title");
+                }
+
+                return title;
             }
         }
 

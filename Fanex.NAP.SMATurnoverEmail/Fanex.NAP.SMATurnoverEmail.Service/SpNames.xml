@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Functions>
   <Function Name="SMA Turnover Automail">
-    <Setting Key="Acc_SMATurnover_IsNotifiedSel" SpName="Acc_SMATurnover_IsNotifiedSel" DbName="DBAGE.bodb02.bodbAdminNet" />
-    <Setting Key="Acc_SMATurnover_IsNotifiedUpd" SpName="Acc_SMATurnover_IsNotifiedUpd" DbName="DBAGE.bodb02.bodbAdminNet" />
-    <Setting Key="Acc_MailingListSel" SpName="Acc_MailingListSel" DbName="DBAGE.bodb02.bodbAdminNet" />
+    <Setting Key="NAP_SMATurnover_IsNotifiedSel" SpName="NAP_SMATurnover_IsNotifiedSel" DbName="DBAGE.bodb02.bodbAdminNet" />
+    <Setting Key="NAP_SMATurnover_IsNotifiedUpd" SpName="NAP_SMATurnover_IsNotifiedUpd" DbName="DBAGE.bodb02.bodbAdminNet" />
+    <Setting Key="Acc_MailingListSel" SpName="Acc_MailingListSel" DbName="DBACC.bodb_ACC.bodbAdminNet" />
   </Function>
 </Functions>

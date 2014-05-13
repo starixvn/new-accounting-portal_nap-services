@@ -1,75 +1,47 @@
-﻿@using Fanex.NAP.SMATurnoverEmailService.Entities
+﻿@using Fanex.NAP.SMATurnoverEmail.Watcher.Entities
 @model IEnumerable<FormattedSMATurnover>
-<style type="text/css">
-    body {
-        font-family: Tahoma, Arial, Verdana, Sans-Serif;
-        color: #333;
-    }
-    .table-wraper {
-        max-height: 200px;
-        width: 1170px;
-        overflow-y: auto;
-    }
-    .table {
-        border-color: #CECCCD;
-        border-style: Solid;
-    }
-    .head-row {
-        background-color:#7A97D1;
-        font-weight: bold;
-    }
-    .not-reply {
-        font-style: italic;
-        font-weight: bold;
-    }
-</style>
-<div>
+<div style="color: #333; font-size: 12px;">
     <div>
-        <br />
-        <p></p>Dear All,</p>
-        <br /><br />
+        <p>Dear All,</p>
         <p>Please be notified that SMA(s) listed in the table below have reached the Maximum Turnover value.</p>
-        <br /><br />
         <p>Please check and carry out timely actions accordingly</p>
     </div>
     <br />
-    <div class="table-wraper">
-        <table cellspacing="0" border="1" border="1" rules="all" class="table">
+    <div style="max-height: 200px; width: 1170px; overflow-y: auto;">
+        <table cellspacing="0" border="1" border="1" rules="all" style="border-color: #c5c5c5; border-style: solid;">
             <thead>
-                <tr class="head-row">
+                <tr style="background-color: #3c5ea5; color: #fff; height: 25px;">
                     <td align="center" style="width: 100px">Sport</td>
-                    <td align="center" style="width: 200px">League</td>
-                    <td align="center" style="width: 100px">Match Code</td>
-                    <td align="center" style="width: 200px">Event</td>
-                    <td align="center" style="width: 100px">Event Date</td>
+                    <td align="center" style="width: 210px">League</td>
+                    <td align="center" style="width: 90px">Match Code</td>
+                    <td align="center" style="width: 210px">Event</td>
+                    <td align="center" style="width: 80px">Event Date</td>
                     <td align="center" style="width: 100px">SMA Name</td>
                     <td align="center" style="width: 70px">Currency</td>
                     <td align="center" style="width: 100px">Member Turnover</td>
                     <td align="center" style="width: 100px">Max Turnover</td>
-                    <td align="center" style="width: 100px">Percentage Used</td>
+                    <td align="center" style="width: 110px">Percentage Used</td>
                 </tr>
             </thead>
             <tbody>
                 @foreach (FormattedSMATurnover data in @Model)
                 {
-                    <tr>
-                        <td align="center" style="width: 100px">@data.SportName</td>
-                        <td align="left" style="width: 200px">@data.LeagueName</td>
-                        <td align="center" style="width: 100px">@data.MatchCode</td>
-                        <td align="left" style="width: 200px">@data.MatchName</td>
-                        <td align="center" style="width: 100px">@data.EventDate</td>
-                        <td align="left" style="width: 100px">@data.Username</td>
-                        <td align="center" style="width: 70px">@data.Currency</td>
-                        <td align="right" style="width: 100px">@data.MaxTOAmount</td>
-                        <td align="right" style="width: 100px">@data.MemberTO</td>
-                        <td align="right" style="width: 100px">@data.PercentageUsed</td>
+                    <tr style="height: 25px;">
+                        <td align="center">@data.SportName</td>
+                        <td align="left">@data.LeagueName</td>
+                        <td align="left">@data.MatchCode</td>
+                        <td align="left">@data.MatchName</td>
+                        <td align="center">@data.EventDate</td>
+                        <td align="left">@data.Username</td>
+                        <td align="center">@data.Currency</td>
+                        <td align="right">@data.MemberTO</td>
+                        <td align="right">@data.MaxTOAmount</td>
+                        <td align="right">@data.PercentageUsed%</td>
                     </tr>
                 }
             </tbody>
         </table>
     </div>
-    <br /><br />
     <p>Regards.</p>
-    <br /><br />
-    <p class="not-reply">This is an auto-mail. Please do not reply.</p>
+    <p style="font-style: italic; font-weight: bold;">This is an auto-mail. Please do not reply.</p>
 </div>
