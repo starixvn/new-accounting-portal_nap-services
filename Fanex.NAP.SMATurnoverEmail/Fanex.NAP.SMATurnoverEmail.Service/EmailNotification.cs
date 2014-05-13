@@ -47,15 +47,6 @@ namespace Fanex.NAP.SMATurnoverEmail.Service
         }
 
         /// <summary>
-        /// Stops the service.
-        /// </summary>
-        public new void Stop()
-        {
-            base.Stop();
-            this._timer.Enabled = false;
-        }
-
-        /// <summary>
         /// When implemented in a derived class, executes when a Start command is sent to the service by the Service Control Manager (SCM)
         /// or when the operating system starts (for a service that starts automatically). Specifies actions to take when the service starts.
         /// </summary>
@@ -71,7 +62,6 @@ namespace Fanex.NAP.SMATurnoverEmail.Service
         /// </summary>
         protected override void OnStop()
         {
-            this.Stop();
         }
 
         /// <summary>

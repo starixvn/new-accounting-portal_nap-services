@@ -26,6 +26,7 @@ namespace Fanex.NAP.SMATurnoverEmail.Watcher.Services
     public class SMATurnoverService : ISMATurnoverService
     {
         private ISMATurnoverRepository _repository = null;
+        private string _template = null;
 
         public SMATurnoverService() :
             this(null)
@@ -52,8 +53,7 @@ namespace Fanex.NAP.SMATurnoverEmail.Watcher.Services
 
             if (recipients != null && turnovers != null && turnovers.Any())
             {
-                string appLocation = AppDomain.CurrentDomain.BaseDirectory;
-                var template = File.ReadAllText(appLocation + templateUrl);
+                string template = GetTemplate(templateUrl);
                 var content = Razor.Parse(template, turnovers);
                 var updatingList = new UpdatingNotifiedSMATurnover(turnovers);
 
@@ -77,6 +77,23 @@ namespace Fanex.NAP.SMATurnoverEmail.Watcher.Services
             }
 
             return isNotified;
+        }
+
+        /// <summary>
+        /// Gets the template.
+        /// </summary>
+        /// <param name="templateUrl">The template URL.</param>
+        /// <returns>The email template.</returns>
+        private string GetTemplate(string templateUrl)
+        {
+            if (this._template == null)
+            {
+                string appLocation = AppDomain.CurrentDomain.BaseDirectory;
+
+                this._template = File.ReadAllText(appLocation + templateUrl);
+            }
+
+            return this._template;
         }
 
         /// <summary>
