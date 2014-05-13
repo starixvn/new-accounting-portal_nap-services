@@ -29,7 +29,7 @@ namespace Fanex.NAP.SMATurnoverEmail.Watcher.Entities
                 this.EventDate = Converter.ToDateTime(rawData.EventDate).FormatShortDate();
                 this.CustID = rawData.CustID;
                 this.Username = rawData.Username;
-                this.Level = CacheRef.GetCustomerLevel(rawData.RoldeID);
+                this.Level = CacheRef.GetCustomerLevel(rawData.RoleID);
                 this.Currency = rawData.Currency;
                 this.MaxTOAmount = Converter.ToDecimal(rawData.MaxTurnover).FormatDecimal();
                 this.MemberTO = Converter.ToDecimal(rawData.TotalTurnover).FormatDecimal();

@@ -34,7 +34,7 @@ namespace Fanex.NAP.SMATurnoverEmail.Watcher.Entities
 
         public string Username { get; set; }
 
-        public byte? RoldeID { get; set; }
+        public byte? RoleID { get; set; }
 
         public string Currency { get; set; }
 

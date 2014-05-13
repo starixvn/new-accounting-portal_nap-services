@@ -7,7 +7,7 @@
         <p>Please check and carry out timely actions accordingly</p>
     </div>
     <br />
-    <div style="max-height: 200px; width: 1170px; overflow-y: auto;">
+    <div style="max-height: 200px; width: 1225px; overflow-y: auto;">
         <table cellspacing="0" border="1" border="1" rules="all" style="border-color: #c5c5c5; border-style: solid;">
             <thead>
                 <tr style="background-color: #3c5ea5; color: #fff; height: 25px;">
@@ -15,24 +15,26 @@
                     <td align="center" style="width: 210px">League</td>
                     <td align="center" style="width: 90px">Match Code</td>
                     <td align="center" style="width: 210px">Event</td>
-                    <td align="center" style="width: 80px">Event Date</td>
+                    <td align="center" style="width: 75px">Event Date</td>
                     <td align="center" style="width: 100px">SMA Name</td>
-                    <td align="center" style="width: 70px">Currency</td>
+                    <td align="center" style="width: 75">Level</td>
+                    <td align="center" style="width: 60px">Currency</td>
                     <td align="center" style="width: 100px">Member Turnover</td>
                     <td align="center" style="width: 100px">Max Turnover</td>
-                    <td align="center" style="width: 110px">Percentage Used</td>
+                    <td align="center" style="width: 105px">Percentage Used</td>
                 </tr>
             </thead>
             <tbody>
                 @foreach (FormattedSMATurnover data in @Model)
                 {
                     <tr style="height: 25px;">
-                        <td align="center">@data.SportName</td>
+                        <td align="left">@data.SportName</td>
                         <td align="left">@data.LeagueName</td>
                         <td align="left">@data.MatchCode</td>
                         <td align="left">@data.MatchName</td>
                         <td align="center">@data.EventDate</td>
                         <td align="left">@data.Username</td>
+                        <td align="center">@data.Level</td>
                         <td align="center">@data.Currency</td>
                         <td align="right">@data.MemberTO</td>
                         <td align="right">@data.MaxTOAmount</td>
