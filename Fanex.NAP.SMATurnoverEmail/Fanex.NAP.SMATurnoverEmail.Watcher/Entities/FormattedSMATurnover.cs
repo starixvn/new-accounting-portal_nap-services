@@ -25,7 +25,7 @@ namespace Fanex.NAP.SMATurnoverEmail.Watcher.Entities
                 this.LeagueName = CacheRef.GetLeagueName(rawData.LeagueID);
                 this.MatchID = rawData.MatchID;
                 this.MatchCode = rawData.MatchCode;
-                this.MatchName = string.Format("{0} vs. {1}", CacheRef.GetTeamName(rawData.HomeID), CacheRef.GetTeamName(rawData.AwayID));
+                this.MatchName = string.Format("{0} -vs- {1}", CacheRef.GetTeamName(rawData.HomeID), CacheRef.GetTeamName(rawData.AwayID));
                 this.EventDate = Converter.ToDateTime(rawData.EventDate).FormatShortDate();
                 this.CustID = rawData.CustID;
                 this.Username = rawData.Username;
