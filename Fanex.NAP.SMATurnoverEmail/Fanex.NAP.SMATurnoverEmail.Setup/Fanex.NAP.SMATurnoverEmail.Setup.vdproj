@@ -64,18 +64,18 @@
         "Entry"
         {
         "MsmKey" = "8:_2AA55336E9E41A884DC9F56258D1A488"
-        "OwnerKey" = "8:_9322C024A972A5FDBF2644B2D9887187"
+        "OwnerKey" = "8:_BE2E287636ADE4E5F45E1B97E2ECE3EA"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_37B684C5CE718BFC3BE1AB0AF0A297E3"
-        "OwnerKey" = "8:_939E56F02E6AD6A9E13EC75E0B994762"
+        "MsmKey" = "8:_31D104DF7E3FC1D11A86A028C9E00FFE"
+        "OwnerKey" = "8:_BE2E287636ADE4E5F45E1B97E2ECE3EA"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_37B684C5CE718BFC3BE1AB0AF0A297E3"
+        "MsmKey" = "8:_31D104DF7E3FC1D11A86A028C9E00FFE"
         "OwnerKey" = "8:_86661CCF676F4E8A99AD36E4B93AF210"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -93,32 +93,8 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_68B5A19BBBC25F18DF0EC8848BB3664A"
-        "OwnerKey" = "8:_939E56F02E6AD6A9E13EC75E0B994762"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_68B5A19BBBC25F18DF0EC8848BB3664A"
-        "OwnerKey" = "8:_86661CCF676F4E8A99AD36E4B93AF210"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_7A2A6099EDDF4139B0169276F49EEAF4"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_7F5AC36C350316BF73C32EC19B284292"
-        "OwnerKey" = "8:_86661CCF676F4E8A99AD36E4B93AF210"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_7F5AC36C350316BF73C32EC19B284292"
-        "OwnerKey" = "8:_9322C024A972A5FDBF2644B2D9887187"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -135,13 +111,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_8E44C7D11865482EAF47C478941B2F1C"
-        "OwnerKey" = "8:_9322C024A972A5FDBF2644B2D9887187"
+        "MsmKey" = "8:_886D0B1C0EAF9655F09F0AB84BEF325A"
+        "OwnerKey" = "8:_BC0F4351756DA0EBA109C3BCC954B532"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_8E44C7D11865482EAF47C478941B2F1C"
+        "MsmKey" = "8:_886D0B1C0EAF9655F09F0AB84BEF325A"
         "OwnerKey" = "8:_86661CCF676F4E8A99AD36E4B93AF210"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -207,25 +183,43 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_9322C024A972A5FDBF2644B2D9887187"
-        "OwnerKey" = "8:_86661CCF676F4E8A99AD36E4B93AF210"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_932D953DA0F94407B7F62A8C408808AC"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_939E56F02E6AD6A9E13EC75E0B994762"
-        "OwnerKey" = "8:_9322C024A972A5FDBF2644B2D9887187"
+        "MsmKey" = "8:_B21B4DB1498BC5D41CF4782347690F6F"
+        "OwnerKey" = "8:_2AA55336E9E41A884DC9F56258D1A488"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_939E56F02E6AD6A9E13EC75E0B994762"
+        "MsmKey" = "8:_B21B4DB1498BC5D41CF4782347690F6F"
+        "OwnerKey" = "8:_BE2E287636ADE4E5F45E1B97E2ECE3EA"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B21B4DB1498BC5D41CF4782347690F6F"
+        "OwnerKey" = "8:_86661CCF676F4E8A99AD36E4B93AF210"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_BC0F4351756DA0EBA109C3BCC954B532"
+        "OwnerKey" = "8:_BE2E287636ADE4E5F45E1B97E2ECE3EA"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_BC0F4351756DA0EBA109C3BCC954B532"
+        "OwnerKey" = "8:_86661CCF676F4E8A99AD36E4B93AF210"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_BE2E287636ADE4E5F45E1B97E2ECE3EA"
         "OwnerKey" = "8:_86661CCF676F4E8A99AD36E4B93AF210"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -233,6 +227,18 @@
         {
         "MsmKey" = "8:_C0595AF602D6225CDD9D482504850B04"
         "OwnerKey" = "8:_86661CCF676F4E8A99AD36E4B93AF210"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DF4D73F33D923046F152464EF2505D59"
+        "OwnerKey" = "8:_86661CCF676F4E8A99AD36E4B93AF210"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DF4D73F33D923046F152464EF2505D59"
+        "OwnerKey" = "8:_BE2E287636ADE4E5F45E1B97E2ECE3EA"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -255,32 +261,26 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_EF4DB2F98E9178F1A25426969EC11B04"
+        "MsmKey" = "8:_ED48B247505F0F4F23F1633CE8FC3CAB"
+        "OwnerKey" = "8:_BC0F4351756DA0EBA109C3BCC954B532"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_ED48B247505F0F4F23F1633CE8FC3CAB"
         "OwnerKey" = "8:_86661CCF676F4E8A99AD36E4B93AF210"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_EF4DB2F98E9178F1A25426969EC11B04"
-        "OwnerKey" = "8:_8E44C7D11865482EAF47C478941B2F1C"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_FDAA24C91A2CE512F696FBC0B3214EC6"
         "OwnerKey" = "8:_86661CCF676F4E8A99AD36E4B93AF210"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_FDAA24C91A2CE512F696FBC0B3214EC6"
-        "OwnerKey" = "8:_2AA55336E9E41A884DC9F56258D1A488"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_FDAA24C91A2CE512F696FBC0B3214EC6"
-        "OwnerKey" = "8:_9322C024A972A5FDBF2644B2D9887187"
+        "MsmKey" = "8:_EF4DB2F98E9178F1A25426969EC11B04"
+        "OwnerKey" = "8:_31D104DF7E3FC1D11A86A028C9E00FFE"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -292,43 +292,37 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_9322C024A972A5FDBF2644B2D9887187"
+        "OwnerKey" = "8:_BE2E287636ADE4E5F45E1B97E2ECE3EA"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_939E56F02E6AD6A9E13EC75E0B994762"
+        "OwnerKey" = "8:_BC0F4351756DA0EBA109C3BCC954B532"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_37B684C5CE718BFC3BE1AB0AF0A297E3"
+        "OwnerKey" = "8:_886D0B1C0EAF9655F09F0AB84BEF325A"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_68B5A19BBBC25F18DF0EC8848BB3664A"
+        "OwnerKey" = "8:_ED48B247505F0F4F23F1633CE8FC3CAB"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_7F5AC36C350316BF73C32EC19B284292"
+        "OwnerKey" = "8:_31D104DF7E3FC1D11A86A028C9E00FFE"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_FDAA24C91A2CE512F696FBC0B3214EC6"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_8E44C7D11865482EAF47C478941B2F1C"
+        "OwnerKey" = "8:_DF4D73F33D923046F152464EF2505D59"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -347,6 +341,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_2AA55336E9E41A884DC9F56258D1A488"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_B21B4DB1498BC5D41CF4782347690F6F"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -639,20 +639,20 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_37B684C5CE718BFC3BE1AB0AF0A297E3"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_31D104DF7E3FC1D11A86A028C9E00FFE"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:SPSRemoting, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:RazorEngine, Version=3.2.0.0, Culture=neutral, PublicKeyToken=9ee697374c7e744a, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_37B684C5CE718BFC3BE1AB0AF0A297E3"
+                    "_31D104DF7E3FC1D11A86A028C9E00FFE"
                     {
-                    "Name" = "8:SPSRemoting.dll"
+                    "Name" = "8:RazorEngine.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:SPSRemoting.dll"
+            "SourcePath" = "8:RazorEngine.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_1A5C0B2DB4304448AE8D8E0E435D4E62"
@@ -701,37 +701,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_68B5A19BBBC25F18DF0EC8848BB3664A"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:IBCFile, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_68B5A19BBBC25F18DF0EC8848BB3664A"
-                    {
-                    "Name" = "8:IBCFile.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:IBCFile.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_1A5C0B2DB4304448AE8D8E0E435D4E62"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7A2A6099EDDF4139B0169276F49EEAF4"
             {
             "SourcePath" = "8:..\\Fanex.NAP.SMATurnoverEmail.Service\\App.config"
@@ -750,37 +719,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7F5AC36C350316BF73C32EC19B284292"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Fanex.MailDeliver.MailClient, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_7F5AC36C350316BF73C32EC19B284292"
-                    {
-                    "Name" = "8:Fanex.MailDeliver.MailClient.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Fanex.MailDeliver.MailClient.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_1A5C0B2DB4304448AE8D8E0E435D4E62"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_882B3CBCCD8B4940AC737FEE4A31040D"
@@ -803,20 +741,20 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8E44C7D11865482EAF47C478941B2F1C"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_886D0B1C0EAF9655F09F0AB84BEF325A"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:RazorEngine, Version=3.2.0.0, Culture=neutral, PublicKeyToken=9ee697374c7e744a, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:SPSRemoting, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_8E44C7D11865482EAF47C478941B2F1C"
+                    "_886D0B1C0EAF9655F09F0AB84BEF325A"
                     {
-                    "Name" = "8:RazorEngine.dll"
+                    "Name" = "8:SPSRemoting.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:RazorEngine.dll"
+            "SourcePath" = "8:SPSRemoting.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_1A5C0B2DB4304448AE8D8E0E435D4E62"
@@ -896,37 +834,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9322C024A972A5FDBF2644B2D9887187"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Fanex.NAP.SMATurnoverEmail.Watcher, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86"
-                "ScatterAssemblies"
-                {
-                    "_9322C024A972A5FDBF2644B2D9887187"
-                    {
-                    "Name" = "8:Fanex.NAP.SMATurnoverEmail.Watcher.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Fanex.NAP.SMATurnoverEmail.Watcher.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_1A5C0B2DB4304448AE8D8E0E435D4E62"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_932D953DA0F94407B7F62A8C408808AC"
             {
             "SourcePath" = "8:..\\Fanex.NAP.SMATurnoverEmail.Service\\Templates\\EmailTemplate.cshtml"
@@ -947,20 +854,82 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_939E56F02E6AD6A9E13EC75E0B994762"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B21B4DB1498BC5D41CF4782347690F6F"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Fanex.Common, Version=1.0.404.97, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_B21B4DB1498BC5D41CF4782347690F6F"
+                    {
+                    "Name" = "8:Fanex.Common.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Fanex.Common.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_1A5C0B2DB4304448AE8D8E0E435D4E62"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BC0F4351756DA0EBA109C3BCC954B532"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:RemotingRef, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_939E56F02E6AD6A9E13EC75E0B994762"
+                    "_BC0F4351756DA0EBA109C3BCC954B532"
                     {
                     "Name" = "8:RemotingRef.dll"
                     "Attributes" = "3:512"
                     }
                 }
             "SourcePath" = "8:RemotingRef.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_1A5C0B2DB4304448AE8D8E0E435D4E62"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BE2E287636ADE4E5F45E1B97E2ECE3EA"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Fanex.NAP.SMATurnoverEmail.Watcher, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86"
+                "ScatterAssemblies"
+                {
+                    "_BE2E287636ADE4E5F45E1B97E2ECE3EA"
+                    {
+                    "Name" = "8:Fanex.NAP.SMATurnoverEmail.Watcher.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Fanex.NAP.SMATurnoverEmail.Watcher.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_1A5C0B2DB4304448AE8D8E0E435D4E62"
@@ -1009,6 +978,37 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DF4D73F33D923046F152464EF2505D59"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Fanex.MailDeliver.MailClient, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_DF4D73F33D923046F152464EF2505D59"
+                    {
+                    "Name" = "8:Fanex.MailDeliver.MailClient.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Fanex.MailDeliver.MailClient.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_1A5C0B2DB4304448AE8D8E0E435D4E62"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_E555DDD9A6B22EF27A6EE601893A4E8C"
             {
             "AssemblyRegister" = "3:1"
@@ -1040,20 +1040,20 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_EF4DB2F98E9178F1A25426969EC11B04"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_ED48B247505F0F4F23F1633CE8FC3CAB"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:IBCFile, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_EF4DB2F98E9178F1A25426969EC11B04"
+                    "_ED48B247505F0F4F23F1633CE8FC3CAB"
                     {
-                    "Name" = "8:System.Web.Razor.dll"
+                    "Name" = "8:IBCFile.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:System.Web.Razor.dll"
+            "SourcePath" = "8:IBCFile.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_1A5C0B2DB4304448AE8D8E0E435D4E62"
@@ -1071,20 +1071,20 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_FDAA24C91A2CE512F696FBC0B3214EC6"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_EF4DB2F98E9178F1A25426969EC11B04"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Fanex.Common, Version=1.0.404.97, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_FDAA24C91A2CE512F696FBC0B3214EC6"
+                    "_EF4DB2F98E9178F1A25426969EC11B04"
                     {
-                    "Name" = "8:Fanex.Common.dll"
+                    "Name" = "8:System.Web.Razor.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:Fanex.Common.dll"
+            "SourcePath" = "8:System.Web.Razor.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_1A5C0B2DB4304448AE8D8E0E435D4E62"
@@ -1170,7 +1170,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:SMA Turnover Email Notification"
         "ProductCode" = "8:{11AF03B7-E639-404B-840B-D38196A91DD1}"
-        "PackageCode" = "8:{88E0CC7A-7D11-4123-AA77-E20A373EB5DB}"
+        "PackageCode" = "8:{6F79B9A1-0811-40C7-A6FF-4A96337FCE75}"
         "UpgradeCode" = "8:{C5C0460E-C6D8-4E30-8153-23D58144614E}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -1691,7 +1691,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_86661CCF676F4E8A99AD36E4B93AF210"
             {
-            "SourcePath" = "8:..\\Fanex.NAP.SMATurnoverEmail.Service\\obj\\x86\\Release\\Fanex.NAP.SMATurnoverEmail.Service.exe"
+            "SourcePath" = "8:..\\Fanex.NAP.SMATurnoverEmail.Service\\obj\\x86\\Debug\\Fanex.NAP.SMATurnoverEmail.Service.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_1A5C0B2DB4304448AE8D8E0E435D4E62"

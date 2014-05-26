@@ -46,8 +46,9 @@ namespace Fanex.NAP.SMATurnoverEmail.Watcher.Services
         public bool NotifyEmail(string templateUrl)
         {
             var isNotified = true;
-            var timezone = TimeZone.CurrentTimeZone.GetUtcOffset(DateTime.Now).Hours;
-            var subject = string.Format(AppSettings.Subject, DateTime.Now, string.Format("{0}{1}", timezone > 0 ? "+" : string.Empty, timezone));
+            var offset = TimeZone.CurrentTimeZone.GetUtcOffset(DateTime.Now).Hours;
+            var timezoneInd = DateTime.Now.IsDaylightSavingTime() ? offset - 1 : offset;
+            var subject = string.Format(AppSettings.Subject, DateTime.Now, string.Format("{0}{1}", timezoneInd > 0 ? "+" : string.Empty, timezoneInd));
             var recipients = GetRecipients();
             IEnumerable<FormattedSMATurnover> turnovers = GetReachedSMATurnover();
 
