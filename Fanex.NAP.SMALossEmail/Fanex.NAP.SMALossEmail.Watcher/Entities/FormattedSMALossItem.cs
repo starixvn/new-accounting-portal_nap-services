@@ -10,9 +10,10 @@
 namespace Fanex.NAP.SMALossEmail.Watcher.Entities
 {
     using Fanex.Common;
+    using Fanex.NAP.SMALossEmail.Watcher.Helpers;
 
     /// <summary>
-    /// Formatted SMA Turnover which is used to bind with the template.
+    /// Formatted SMA Loss which is used to bind with the template.
     /// </summary>
     public class FormattedSMALossItem
     {
@@ -24,11 +25,12 @@ namespace Fanex.NAP.SMALossEmail.Watcher.Entities
                 this.Username = rawData.Username;
                 this.Level = GetCustomerLevel(rawData.RoleID);
                 this.Currency = rawData.Currency;
-                this.TotalBalance = Converter.ToDecimal(rawData.TotalBalance);
-                this.MaxLoss = Converter.ToDecimal(rawData.MaxLoss);
-                this.LossPercentage = Converter.ToInt(rawData.PercentageLoss);
+                this.TotalBalance = Converter.ToDecimal(rawData.TotalBalance).FormatDecimal();
+                this.MaxLoss = Converter.ToDecimal(rawData.MaxLoss).FormatDecimal();
+                this.LossPercentage = Converter.ToInt(rawData.PercentageLoss).FormatInteger();
             }
         }
+
         public int CustID { get; set; }
 
         public string Username { get; set; }
@@ -37,13 +39,11 @@ namespace Fanex.NAP.SMALossEmail.Watcher.Entities
 
         public string Currency { get; set; }
 
-        public decimal TotalBalance { get; set; }
+        public string TotalBalance { get; set; }
 
-        public decimal MaxLoss { get; set; }
+        public string MaxLoss { get; set; }
 
-        public int LossPercentage { get; set; }
-
-        public int PercentageUsed { get; set; }
+        public string LossPercentage { get; set; }
 
         /// <summary>
         /// Gets the customer level.

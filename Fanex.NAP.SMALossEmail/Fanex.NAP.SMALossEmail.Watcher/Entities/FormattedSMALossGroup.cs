@@ -12,16 +12,16 @@ namespace Fanex.NAP.SMALossEmail.Watcher.Entities
     using System.Collections.Generic;
 
     /// <summary>
-    /// SMA turnover group view model.
+    /// SMA loss group view model.
     /// </summary>
     public class FormattedSMALossGroup
     {
-        public FormattedSMALossGroup(SMALoss rawData)
+        public FormattedSMALossGroup(SMALoss rawData, string levelRange)
         {
             if (rawData != null)
             {
                 this.LossLevel = rawData.LevelID;
-                this.LossLevelRange = rawData.LevelRange;
+                this.LossLevelRange = levelRange;
                 this.SMALossItems = new List<FormattedSMALossItem>();
             }
         }

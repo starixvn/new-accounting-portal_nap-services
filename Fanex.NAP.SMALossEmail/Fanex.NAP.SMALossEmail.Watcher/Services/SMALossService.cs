@@ -46,17 +46,16 @@ namespace Fanex.NAP.SMALossEmail.Watcher.Services
         public bool NotifyEmail(string templateUrl)
         {
             var isNotified = true;
-            var offset = TimeZone.CurrentTimeZone.GetUtcOffset(DateTime.Now).Hours;
-            var timezoneInd = DateTime.Now.IsDaylightSavingTime() ? offset - 1 : offset;
-            var subject = string.Format(AppSettings.Subject, DateTime.Now, string.Format("{0}{1}", timezoneInd > 0 ? "+" : string.Empty, timezoneInd));
-            var recipients = GetRecipients();
-            IEnumerable<FormattedSMALossItem> turnovers = GetReachedSMATurnover();
+            int offset = TimeZone.CurrentTimeZone.GetUtcOffset(DateTime.Now).Hours;
+            int timezoneInd = DateTime.Now.IsDaylightSavingTime() ? offset - 1 : offset;
+            string subject = string.Format(AppSettings.Subject, DateTime.Now, string.Format("{0}{1}", timezoneInd > 0 ? "+" : string.Empty, timezoneInd));
+            Recipients recipients = GetRecipients();
+            IEnumerable<FormattedSMALossGroup> lossItems = GetReachedSMALoss();
 
-            if (recipients != null && turnovers != null && turnovers.Any())
+            if (recipients != null && lossItems != null && lossItems.Any())
             {
                 string template = GetTemplate(templateUrl);
-                var content = Razor.Parse(template, turnovers);
-                var updatingList = new UpdatingNotifiedSMALoss(turnovers);
+                string content = Razor.Parse(template, lossItems);
 
                 SendMail(new EmailContent
                     {
@@ -65,16 +64,6 @@ namespace Fanex.NAP.SMALossEmail.Watcher.Services
                         Subject = subject,
                         Body = content
                     });
-
-                if (updatingList.IsValid())
-                {
-                    this._repository.UpdateNotifiedStatus(updatingList);
-
-                    if (updatingList.ErrCode != 0)
-                    {
-                        throw new Exception(updatingList.ErrMsg);
-                    }
-                }
             }
 
             return isNotified;
@@ -111,17 +100,66 @@ namespace Fanex.NAP.SMALossEmail.Watcher.Services
         }
 
         /// <summary>
-        /// Gets the reached SMA turnover.
+        /// Gets the reached SMA loss.
         /// </summary>
-        /// <returns>List of FormattedSMATurnover objects.</returns>
-        private IEnumerable<FormattedSMALossItem> GetReachedSMATurnover()
+        /// <returns>List of FormattedSMALossGroup objects.</returns>
+        private IEnumerable<FormattedSMALossGroup> GetReachedSMALoss()
         {
-            IEnumerable<SMALoss> rawData = this._repository.GetNotifiedSMATurnover();
-            IEnumerable<FormattedSMALossItem> result = null;
+            IEnumerable<SMALoss> rawData = this._repository.GetNotifiedSMALoss();
+            List<FormattedSMALossLevelItem> levels = this.GetSMALossLevels();
+            List<FormattedSMALossGroup> result = null;
 
             if (rawData != null && rawData.Any())
             {
-                result = rawData.Select(obj => new FormattedSMALossItem(obj));
+                IEnumerable<IGrouping<byte, SMALoss>> groups = rawData.GroupBy(obj => obj.LevelID);
+                FormattedSMALossGroup lossGroup = null;
+                SMALoss firstItem = null;
+                FormattedSMALossLevelItem level = null;
+
+                result = new List<FormattedSMALossGroup>();
+
+                foreach (IGrouping<byte, SMALoss> group in groups)
+                {
+                    firstItem = group.ElementAt(0);
+                    level = levels.FirstOrDefault(obj => obj.LevelID == firstItem.LevelID);
+                    lossGroup = new FormattedSMALossGroup(firstItem, level.Value);
+
+                    foreach (SMALoss item in group)
+                    {
+                        lossGroup.SMALossItems.Add(new FormattedSMALossItem(item));
+                    }
+
+                    if (lossGroup.SMALossItems.Count > 0)
+                    {
+                        result.Add(lossGroup);
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Gets the SMA loss levels.
+        /// </summary>
+        /// <returns>List of SMALossLevelItem objects.</returns>
+        private List<FormattedSMALossLevelItem> GetSMALossLevels()
+        {
+            IEnumerable<SMALossLevel> rawData = this._repository.GetSMALossLevels();
+            List<FormattedSMALossLevelItem> result = null;
+
+            if (rawData.Any())
+            {
+                SMALossLevel higherLevel = null;
+
+                rawData = rawData.OrderByDescending(obj => obj.LevelID);
+                result = new List<FormattedSMALossLevelItem>();
+
+                foreach (SMALossLevel level in rawData)
+                {
+                    result.Add(new FormattedSMALossLevelItem(level, higherLevel));
+                    higherLevel = level;
+                }
             }
 
             return result;

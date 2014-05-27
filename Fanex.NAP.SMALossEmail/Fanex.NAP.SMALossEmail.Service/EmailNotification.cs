@@ -15,6 +15,8 @@ namespace Fanex.NAP.SMALossEmail.Service
     using System.Timers;
     using Fanex.Data.Configuration;
     using Fanex.Logging;
+    using Fanex.NAP.SMALossEmail.Watcher.Configurations;
+    using Fanex.NAP.SMALossEmail.Watcher.Services;
 
     /// <summary>
     /// SMA Turnover email service.
@@ -23,13 +25,16 @@ namespace Fanex.NAP.SMALossEmail.Service
     {
         private const string TemplateUrl = @"/Templates/EmailTemplate.cshtml";
 
-        ////private Timer _timer = null;
-        ////private ISMATurnoverService _turnoverService = null;
+        private TimeSpan _startTime;
+        private Timer _timer = null;
+        private ISMALossService _lossService = null;
 
         public EmailNotification()
         {
             InitializeComponent();
             DbSettingProviderManager.Current.Start();
+            this._lossService = new SMALossService();
+            this._startTime = new TimeSpan(AppSettings.SendEmailHour, AppSettings.SendEmailMinute, 0);
         }
 
         /// <summary>
@@ -37,6 +42,7 @@ namespace Fanex.NAP.SMALossEmail.Service
         /// </summary>
         public void Start()
         {
+            ResetTimer();
         }
 
         /// <summary>
@@ -55,6 +61,47 @@ namespace Fanex.NAP.SMALossEmail.Service
         /// </summary>
         protected override void OnStop()
         {
+        }
+
+        /// <summary>
+        /// Resets the timer.
+        /// </summary>
+        private void ResetTimer()
+        {
+            TimeSpan interval = this._startTime.Subtract(DateTime.Now.TimeOfDay); ////new TimeSpan(DateTime.Now.Ticks).Subtract(this._startTime);
+            double intervalMilisecond = interval.TotalMilliseconds;
+
+            if (intervalMilisecond < 0)
+            {
+                interval = interval.Add(new TimeSpan(24, 0, 0));
+                intervalMilisecond = interval.TotalMilliseconds;
+            }
+
+            this._timer = new Timer(intervalMilisecond);
+            this._timer.AutoReset = false;
+            this._timer.Elapsed += new ElapsedEventHandler(this.CallService);
+            this._timer.Enabled = true;
+        }
+
+        /// <summary>
+        /// Calls the service.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="ElapsedEventArgs"/> instance containing the event data.</param>
+        private void CallService(object sender, ElapsedEventArgs e)
+        {
+            try
+            {
+                if (this._lossService != null)
+                {
+                    this._lossService.NotifyEmail(TemplateUrl);
+                    ResetTimer();
+                }
+            }
+            catch (Exception ex)
+            {
+                HandleException(ex);
+            }
         }
 
         /// <summary>

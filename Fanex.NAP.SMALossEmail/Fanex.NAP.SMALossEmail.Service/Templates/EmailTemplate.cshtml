@@ -1,45 +1,65 @@
 ﻿@using Fanex.NAP.SMALossEmail.Watcher.Entities
-@model IEnumerable<FormattedSMATurnover>
+@model IEnumerable<FormattedSMALossGroup>
 <div style="color: #333; font-family: arial,sans-serif; font-size: 12px;">
     <div>
         <p>Dear All,</p>
-        <p>Please be notified that SMA(s) listed in the table below have reached the Maximum Turnover value.</p>
-        <p>Please check and carry out timely actions accordingly</p>
+        <p>Please be notified that SMA(s) listed in the table below have reached the Maximum Loss value.</p>
+        <p>Please check and take timely actions accordingly</p>
     </div>
     <br />
-    <div style="max-height: 600px; width: 1225px; overflow-y: auto;">
+    <div style="max-height: 600px; width: 760px; overflow-y: auto;">
         <table cellspacing="0" border="1" border="1" rules="all" style="border-color: #c5c5c5; border-style: solid; color: #333; font-family: arial,sans-serif; font-size: 12px;">
             <thead>
                 <tr style="background-color: #3c5ea5; color: #fff; height: 25px;">
-                    <td align="center" style="width: 100px">Sport</td>
-                    <td align="center" style="width: 210px">League</td>
-                    <td align="center" style="width: 90px">Match Code</td>
-                    <td align="center" style="width: 210px">Event</td>
-                    <td align="center" style="width: 75px">Event Date</td>
-                    <td align="center" style="width: 100px">SMA Name</td>
-                    <td align="center" style="width: 75">Level</td>
+                    <td align="center" style="width: 70px">#</td>
+                    <td align="center" style="width: 200px">SMA Name</td>
+                    <td align="center" style="width: 85px">Level</td>
                     <td align="center" style="width: 60px">Currency</td>
-                    <td align="center" style="width: 100px">Member Turnover</td>
-                    <td align="center" style="width: 100px">Max Turnover</td>
-                    <td align="center" style="width: 105px">Percentage Used</td>
+                    <td align="center" style="width: 120px">Total Balance</td>
+                    <td align="center" style="width: 120px">Max Loss</td>
+                    <td align="center" style="width: 105px">Loss Percentage</td>
                 </tr>
             </thead>
             <tbody>
-                @foreach (FormattedSMATurnover data in @Model)
-                {
-                    <tr style="height: 25px;">
-                        <td align="left">@data.SportName</td>
-                        <td align="left">@data.LeagueName</td>
-                        <td align="left">@data.MatchCode</td>
-                        <td align="left">@data.MatchName</td>
-                        <td align="center">@data.EventDate</td>
-                        <td align="left">@data.Username</td>
-                        <td align="center">@data.Level</td>
-                        <td align="center">@data.Currency</td>
-                        <td align="right">@data.MemberTO</td>
-                        <td align="right">@data.MaxTOAmount</td>
-                        <td align="right">@data.PercentageUsed%</td>
-                    </tr>
+                @{
+                    int counter = 0;
+
+                    foreach (FormattedSMALossGroup group in Model)
+                    {
+                        <tr style="height: 25px; background-color: #f1f1f1">
+                            @if (group.LossLevel == 1)
+                            {
+                                <td style="color: #6DA513; font-weight: bold"colspan="7">@group.LossLevelRange (@group.SMALossItems.Count)</td>
+                            }
+                            else if (group.LossLevel == 2)
+                            {
+                                <td style="color: #D75A00; font-weight: bold"colspan="7">@group.LossLevelRange (@group.SMALossItems.Count)</td>
+                            }
+                            else if (group.LossLevel == 3)
+                            {
+                                <td style="color: #D70500; font-weight: bold"colspan="7">@group.LossLevelRange (@group.SMALossItems.Count)</td>
+                            }
+                            else
+                            {
+                                <td colspan="7">@group.LossLevelRange (@group.SMALossItems.Count)</td>
+                            }
+                        </tr>
+
+                        foreach (FormattedSMALossItem data in group.SMALossItems)
+                        {
+                            counter++;
+
+                            <tr style="height: 25px;">
+                                <td align="center">@counter</td>
+                                <td align="left">@data.Username</td>
+                                <td align="center">@data.Level</td>
+                                <td align="center">@data.Currency</td>
+                                <td align="right">@data.TotalBalance</td>
+                                <td align="right">@data.MaxLoss</td>
+                                <td align="right">@data.LossPercentage%</td>
+                            </tr>
+                        }
+                    }
                 }
             </tbody>
         </table>

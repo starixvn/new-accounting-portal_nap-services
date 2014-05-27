@@ -17,21 +17,35 @@ namespace Fanex.NAP.SMALossEmail.Watcher.Configurations
     /// </summary>
     public static class AppSettings
     {
-        private static int sendEmailTime;
+        private static int sendEmailHour = -1;
+        private static int sendEmailMinute = -1;
         private static string title;
         private static string subject;
         private static int functionID;
 
-        public static int SendEmailTime
+        public static int SendEmailHour
         {
             get
             {
-                if (sendEmailTime == 0)
+                if (sendEmailHour == -1)
                 {
-                    sendEmailTime = Converter.ToInt(GetValue("SendEmailTime"));
+                    sendEmailHour = Converter.ToInt(GetValue("SendEmailHour"));
                 }
 
-                return sendEmailTime;
+                return sendEmailHour;
+            }
+        }
+
+        public static int SendEmailMinute
+        {
+            get
+            {
+                if (sendEmailMinute == -1)
+                {
+                    sendEmailMinute = Converter.ToInt(GetValue("SendEmailMinute"));
+                }
+
+                return sendEmailMinute;
             }
         }
 

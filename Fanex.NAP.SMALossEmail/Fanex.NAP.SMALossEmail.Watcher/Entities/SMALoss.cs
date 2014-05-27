@@ -18,8 +18,6 @@ namespace Fanex.NAP.SMALossEmail.Watcher.Entities
     {
         public byte LevelID { get; set; }
 
-        public string LevelRange { get; set; }
-
         public int CustID { get; set; }
 
         public string Username { get; set; }

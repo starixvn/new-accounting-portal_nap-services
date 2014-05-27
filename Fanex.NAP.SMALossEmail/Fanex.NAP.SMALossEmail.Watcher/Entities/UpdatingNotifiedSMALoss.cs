@@ -17,13 +17,13 @@ namespace Fanex.NAP.SMALossEmail.Watcher.Entities
     /// </summary>
     public class UpdatingNotifiedSMALoss
     {
-        public UpdatingNotifiedSMALoss(IEnumerable<FormattedSMALossItem> turnovers)
+        public UpdatingNotifiedSMALoss(IEnumerable<SMALoss> turnovers)
         {
             this.SMAIDs = string.Empty;
 
             if (turnovers != null && turnovers.Any())
             {
-                foreach (FormattedSMALossItem item in turnovers)
+                foreach (SMALoss item in turnovers)
                 {
                     this.SMAIDs += item.CustID + ",";
                 }

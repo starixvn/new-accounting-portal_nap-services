@@ -77,13 +77,21 @@
     <Content Include="SpNames.xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Templates\EmailTemplate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ProjectInstaller.resx">
       <DependentUpon>ProjectInstaller.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fanex.NAP.SMALossEmail.Watcher\Fanex.NAP.SMALossEmail.Watcher.csproj">
+      <Project>{A13B13E5-9F26-42B4-A19F-DA7ECD07811C}</Project>
+      <Name>Fanex.NAP.SMALossEmail.Watcher</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
