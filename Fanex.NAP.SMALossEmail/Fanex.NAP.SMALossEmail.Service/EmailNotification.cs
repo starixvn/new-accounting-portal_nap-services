@@ -71,7 +71,7 @@ namespace Fanex.NAP.SMALossEmail.Service
             TimeSpan interval = this._startTime.Subtract(DateTime.Now.TimeOfDay); ////new TimeSpan(DateTime.Now.Ticks).Subtract(this._startTime);
             double intervalMilisecond = interval.TotalMilliseconds;
 
-            if (intervalMilisecond < 0)
+            if (intervalMilisecond <= 0)
             {
                 interval = interval.Add(new TimeSpan(24, 0, 0));
                 intervalMilisecond = interval.TotalMilliseconds;
@@ -79,8 +79,8 @@ namespace Fanex.NAP.SMALossEmail.Service
 
             this._timer = new Timer(intervalMilisecond);
             this._timer.AutoReset = false;
-            this._timer.Elapsed += new ElapsedEventHandler(this.CallService);
             this._timer.Enabled = true;
+            this._timer.Elapsed += new ElapsedEventHandler(this.CallService);
         }
 
         /// <summary>
@@ -94,6 +94,7 @@ namespace Fanex.NAP.SMALossEmail.Service
             {
                 if (this._lossService != null)
                 {
+                    this._timer.Enabled = false;
                     this._lossService.NotifyEmail(TemplateUrl);
                     ResetTimer();
                 }
