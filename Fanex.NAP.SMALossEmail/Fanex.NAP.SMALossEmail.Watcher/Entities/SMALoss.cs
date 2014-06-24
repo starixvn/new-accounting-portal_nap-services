@@ -26,10 +26,14 @@ namespace Fanex.NAP.SMALossEmail.Watcher.Entities
 
         public string Currency { get; set; }
 
+        public decimal? YesterdayBalance { get; set; }
+
         public decimal? TotalBalance { get; set; }
 
         public decimal? MaxLoss { get; set; }
 
         public int? PercentageLoss { get; set; }
+
+        public int? Movement { get; set; }
     }
 }

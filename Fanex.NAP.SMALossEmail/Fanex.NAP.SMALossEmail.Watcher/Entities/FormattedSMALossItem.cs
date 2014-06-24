@@ -25,9 +25,11 @@ namespace Fanex.NAP.SMALossEmail.Watcher.Entities
                 this.Username = rawData.Username;
                 this.Level = GetCustomerLevel(rawData.RoleID);
                 this.Currency = rawData.Currency;
+                this.YesterdayBalance = Converter.ToDecimal(rawData.YesterdayBalance).FormatDecimal();
                 this.TotalBalance = Converter.ToDecimal(rawData.TotalBalance).FormatDecimal();
                 this.MaxLoss = Converter.ToDecimal(rawData.MaxLoss).FormatDecimal();
                 this.LossPercentage = Converter.ToInt(rawData.PercentageLoss).FormatInteger();
+                this.ChangedLevel = Converter.ToInt(rawData.Movement);
             }
         }
 
@@ -39,11 +41,15 @@ namespace Fanex.NAP.SMALossEmail.Watcher.Entities
 
         public string Currency { get; set; }
 
+        public string YesterdayBalance { get; set; }
+
         public string TotalBalance { get; set; }
 
         public string MaxLoss { get; set; }
 
         public string LossPercentage { get; set; }
+
+        public int ChangedLevel { get; set; }
 
         /// <summary>
         /// Gets the customer level.

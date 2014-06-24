@@ -25,6 +25,10 @@ namespace Fanex.NAP.SMALossEmail.Watcher.Services
     /// </summary>
     public class SMALossService : ISMALossService
     {
+        private const string UpwardArrowUrl = @"/Templates/Images/UpwardArrow.png";
+        private const string DownwardArrowUrl = @"/Templates/Images/DownardArrow.png";
+        private const string HorizontalLineUrl = @"/Templates/Images/HorizontalLine.png";
+
         private ISMALossRepository _repository = null;
         private string _template = null;
 
@@ -52,7 +56,7 @@ namespace Fanex.NAP.SMALossEmail.Watcher.Services
             Recipients recipients = GetRecipients();
             IEnumerable<FormattedSMALossGroup> lossItems = GetReachedSMALoss();
 
-            if (recipients != null && lossItems != null && lossItems.Any())
+            if (recipients != null && !string.IsNullOrEmpty(recipients.ToList) && lossItems != null && lossItems.Any())
             {
                 string template = GetTemplate(templateUrl);
                 string content = Razor.Parse(template, lossItems);
@@ -182,6 +186,15 @@ namespace Fanex.NAP.SMALossEmail.Watcher.Services
                     Subject = content.Subject,
                     Body = content.Body
                 };
+                string appLocation = AppDomain.CurrentDomain.BaseDirectory;
+                var upwardArrow = new MailLinkedResource(appLocation + UpwardArrowUrl, FileExtentions.IMG_PNG, "lruworradrawpu");
+                var downwardArrow = new MailLinkedResource(appLocation + DownwardArrowUrl, FileExtentions.IMG_PNG, "lruworradrawnwod");
+                var horizontalLineArrow = new MailLinkedResource(appLocation + HorizontalLineUrl, FileExtentions.IMG_PNG, "lruworradrawenillatnoziroh");
+
+                mailItem.AlternateView = new List<MailLinkedResource>();
+                mailItem.AlternateView.Add(upwardArrow);
+                mailItem.AlternateView.Add(downwardArrow);
+                mailItem.AlternateView.Add(horizontalLineArrow);
 
                 client.SendMail(mailItem);
             }

@@ -75,6 +75,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="SpNames.xml" />
+    <Content Include="Templates\Images\UpwardArrow.png" />
+    <Content Include="Templates\Images\HorizontalLine.png" />
+    <Content Include="Templates\Images\DownardArrow.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
