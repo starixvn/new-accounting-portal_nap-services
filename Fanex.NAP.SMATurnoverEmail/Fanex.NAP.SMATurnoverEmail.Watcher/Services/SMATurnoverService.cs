@@ -43,7 +43,7 @@ namespace Fanex.NAP.SMATurnoverEmail.Watcher.Services
         /// </summary>
         /// <param name="templateUrl">The template URL.</param>
         /// <returns>Boolean value indicates whether the email is sent successfully or not.</returns>
-        public bool NotifyEmail(string templateUrl)
+        public bool NotifyEmail(Uri templateUrl)
         {
             var isNotified = true;
             var offset = TimeZone.CurrentTimeZone.GetUtcOffset(DateTime.Now).Hours;
@@ -54,7 +54,7 @@ namespace Fanex.NAP.SMATurnoverEmail.Watcher.Services
 
             if (recipients != null && turnovers != null && turnovers.Any())
             {
-                string template = GetTemplate(templateUrl);
+                string template = GetTemplate(templateUrl.ToString());
                 var content = Razor.Parse(template, turnovers);
                 var updatingList = new UpdatingNotifiedSMATurnover(turnovers);
 

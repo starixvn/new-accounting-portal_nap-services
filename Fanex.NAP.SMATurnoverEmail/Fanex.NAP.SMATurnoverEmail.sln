@@ -7,6 +7,12 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Fanex.NAP.SMATurnoverEmail.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanex.NAP.SMATurnoverEmail.Watcher", "Fanex.NAP.SMATurnoverEmail.Watcher\Fanex.NAP.SMATurnoverEmail.Watcher.csproj", "{45666C3F-BA55-4E9F-A9EE-07E908500E43}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeAnalysis", "CodeAnalysis", "{1091578B-0EC1-48AF-96BF-5C3415BE3B04}"
+	ProjectSection(SolutionItems) = preProject
+		CodeAnalysis\CodeAnalysisConfiguration.xml = CodeAnalysis\CodeAnalysisConfiguration.xml
+		CodeAnalysis\FxCopDictionary.xml = CodeAnalysis\FxCopDictionary.xml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -75,7 +75,7 @@ namespace Fanex.NAP.SMATurnoverEmail.Service
             {
                 if (this._turnoverService != null)
                 {
-                    this._turnoverService.NotifyEmail(TemplateUrl);
+                    this._turnoverService.NotifyEmail(new Uri(TemplateUrl));
                 }
             }
             catch (Exception ex)
@@ -90,6 +90,7 @@ namespace Fanex.NAP.SMATurnoverEmail.Service
         /// <param name="ex">The exception.</param>
         private void HandleException(Exception ex)
         {
+            SqlException sqlEx = ex as SqlException;
             string exceptionFormat = "{0}\r\nType: {1}\r\nSource: {2}\r\nTargetSite: {3}\r\nStackTrace: {4}";
             string message = string.Format(
                                         exceptionFormat,
@@ -99,13 +100,13 @@ namespace Fanex.NAP.SMATurnoverEmail.Service
                                         ex.TargetSite,
                                         ex.StackTrace);
 
-            if (ex is SqlException)
+            if (sqlEx != null)
             {
                 message += string.Format(
                                       "\r\nProcedure: {0}\r\nLine Number: {1}\r\nServer: {2}",
-                                      (ex as SqlException).Procedure,
-                                      (ex as SqlException).LineNumber,
-                                      (ex as SqlException).Server);
+                                      sqlEx.Procedure,
+                                      sqlEx.LineNumber,
+                                      sqlEx.Server);
             }
 
             LogService.Error(message);

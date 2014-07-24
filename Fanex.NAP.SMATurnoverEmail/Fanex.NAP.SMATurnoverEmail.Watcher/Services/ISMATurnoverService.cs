@@ -9,6 +9,8 @@
 
 namespace Fanex.NAP.SMATurnoverEmail.Watcher.Services
 {
+    using System;
+
     public interface ISMATurnoverService
     {
         /// <summary>
@@ -16,6 +18,6 @@ namespace Fanex.NAP.SMATurnoverEmail.Watcher.Services
         /// </summary>
         /// <param name="templateUrl">The template URL.</param>
         /// <returns>Boolean value indicates whether the email is sent successfully or not.</returns>
-        bool NotifyEmail(string templateUrl);
+        bool NotifyEmail(Uri templateUrl);
     }
 }
