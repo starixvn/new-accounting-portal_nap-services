@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanex.NAP.SMALossEmail.Watc
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Fanex.NAP.SMALossEmail.Setup", "Fanex.NAP.SMALossEmail.Setup\Fanex.NAP.SMALossEmail.Setup.vdproj", "{4630DFD5-094B-4433-8CEF-12BCC9830F56}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeAnalysis", "CodeAnalysis", "{54A611DD-E8CB-4597-ABC8-C2664D6E8B5A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
