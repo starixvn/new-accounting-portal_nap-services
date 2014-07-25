@@ -47,7 +47,7 @@ namespace Fanex.NAP.SMALossEmail.Watcher.Services
         /// </summary>
         /// <param name="templateUrl">The template URL.</param>
         /// <returns>Boolean value indicates whether the email is sent successfully or not.</returns>
-        public bool NotifyEmail(string templateUrl)
+        public bool NotifyEmail(Uri templateUrl)
         {
             var isNotified = true;
             int offset = TimeZone.CurrentTimeZone.GetUtcOffset(DateTime.Now).Hours;
@@ -58,7 +58,7 @@ namespace Fanex.NAP.SMALossEmail.Watcher.Services
 
             if (recipients != null && !string.IsNullOrEmpty(recipients.ToList) && lossItems != null && lossItems.Any())
             {
-                string template = GetTemplate(templateUrl);
+                string template = GetTemplate(templateUrl.ToString());
                 string content = Razor.Parse(template, lossItems);
 
                 SendMail(new EmailContent

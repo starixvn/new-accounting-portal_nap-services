@@ -95,7 +95,7 @@ namespace Fanex.NAP.SMALossEmail.Service
                 if (this._lossService != null)
                 {
                     this._timer.Enabled = false;
-                    this._lossService.NotifyEmail(TemplateUrl);
+                    this._lossService.NotifyEmail(new Uri(TemplateUrl));
                     ResetTimer();
                 }
             }
